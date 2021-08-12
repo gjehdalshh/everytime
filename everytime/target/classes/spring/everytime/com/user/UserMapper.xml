@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.everytime.com.user.UserMapper">
+
+	<insert id="insUser">
+		INSERT INTO everyuser
+		(user_id, user_nm, user_pw, ph,
+		gender, university, entrance)
+		VALUES
+		(#{user_id}, #{user_nm},
+		#{user_pw}, #{ph}, #{gender}, #{university}, #{entrance})
+	</insert>
+
+	<select id="selUser" resultType="UserDomain">
+		select *
+		from everyuser
+		where
+		user_id = #{user_id}
+	</select>
+
+	<!-- 유저 아이디 변경 -->
+	<update id="idChange">
+		UPDATE everyuser SET
+		user_id = #{user_id}
+		WHERE i_user = #{i_user};
+	</update>
+	
+	<!-- 아이디,비밀번호 변경 시 확인할 id값 -->
+	<select id="selUserId" resultType="UserDomain">
+		select *
+		from everyuser
+		where
+		i_user = #{i_user}
+	</select>
+	
+	<!-- 유저 비밀번호 변경 -->
+	<update id="pwChange">
+		UPDATE everyuser SET
+		user_pw = #{new_pw}
+		WHERE i_user = #{i_user}
+	</update>
+	
+	<!-- 유저 아이디 검색 -->
+	<select id="selUserNm" resultType="UserDomain">
+		SELECT user_nm, TIMESTAMPDIFF(SECOND, m_dt, NOW()) AS m_dt
+		FROM everyuser
+		WHERE i_user = #{i_user};
+	</select>
+	
+	<!-- 유저 이름 설정 -->
+	<update id="nmChange">
+		UPDATE everyuser SET
+		user_nm = #{user_nm},
+		m_dt = NOW()
+		WHERE i_user = #{i_user};
+	</update>
+</mapper>
+

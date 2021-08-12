@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+.my_info{
+	margin: 50 80 30 20;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.my_info img{
+	width: 60px;
+    height: 60px;
+    float: left;
+}
+
+.div1{
+	display: flex;
+    border: 0.1px solid darkgray;
+    border-radius: 20px;
+    margin: 0 20 30;
+    justify-content: space-between;
+    padding: 40px;
+    align-items: center;
+}
+
+.flex{
+	align-items: center;
+	display: flex;
+}
+
+.profile_div img{
+	width: 150px;
+	height: 150px;
+	border-radius: 40px;
+}
+
+.info{
+	margin-left: 50px;
+    font-size: 30px;
+}
+
+.nm{
+	font-weight: bold;
+}
+
+.color{
+	color: darkgray;
+}
+
+.check_div{
+	text-align: center;
+}
+
+.check_div div{
+	font-size: 30px;
+}
+
+.check img{
+	width: 100px;
+	height: 100px;
+	border-radius: 40px;
+}
+
+
+
+.div2, .div3, .div4, .div5, .div6{
+    border: 0.1px solid darkgray;
+    border-radius: 20px;
+    margin: 0 20 30;
+    padding: 60 40;
+}
+
+.div_1{
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.div_2{
+	font-size: 35px;
+	margin-top: 60px; 
+}
+
+
+
+
+
+
+
+
+

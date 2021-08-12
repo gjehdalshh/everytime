@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.everytime.com.board.BoardMapper">
+
+	<select id="selType" resultType="BoardTypeDomain">
+		select *
+		from t_board_type
+		where
+		i_board_type = #{i_board_type};
+	</select>
+
+	<!-- 글 쓰기 -->
+	<insert id="insBoard" useGeneratedKeys="true"
+		keyProperty="i_board">
+		INSERT INTO t_board
+		(i_board_type, i_user, board_nm,
+		board_ctnt , secret)
+		VALUE
+		(#{i_board_type}, #{i_user}, #{board_nm},
+		#{board_ctnt}, #{secret});
+	</insert>
+
+	<!-- 글 삭제 -->
+	<delete id="delBoard">
+		DELETE FROM t_board
+		WHERE i_board = #{i_board};
+	</delete>
+
+	<!-- 글 수정 -->
+	<select id="updBoardSel" resultType="BoardDomain">
+		SELECT i_board,
+		t_board.i_board_type AS i_board_type, i_user, board_nm, board_ctnt,
+		board_favorite, secret, TIMESTAMPDIFF(SECOND, r_dt, NOW()) AS r_dt,
+		type_title, t_board_type.board_hit
+		FROM t_board
+		LEFT JOIN t_board_type
+		ON
+		t_board.i_board_type = t_board_type.i_board_type
+		WHERE
+		t_board.i_board_type = #{i_board_type} AND i_board = #{i_board};
+	</select>
+
+	<update id="updBoard">
+		UPDATE t_board
+		SET board_nm = #{board_nm}, board_ctnt
+		= #{board_ctnt}, secret = #{secret}, r_dt = NOW()
+		WHERE i_board =
+		#{i_board};
+	</update>
+
+	<!-- detail페이지 -->
+	<select id="detail" resultType="BoardDomain">
+		SELECT a.i_board, a.i_board_type,
+		a.i_user, a.board_nm, a.board_ctnt, a.board_favorite, a.secret,
+		(SELECT count(t_favorite.i_user) FROM t_favorite WHERE t_favorite.i_board = a.i_board) AS favorite,
+		TIMESTAMPDIFF(SECOND, a.r_dt, NOW()) AS r_dt, a.board_hit,
+		(SELECT t_board_type.type_title FROM t_board_type WHERE t_board_type.i_board_type = a.i_board_type) AS type_title,
+		(SELECT everyuser.user_nm FROM everyuser WHERE everyuser.i_user = a.i_user) AS user_nm,
+		(SELECT count(board_cmt.i_cmt) FROM board_cmt WHERE a.i_board = board_cmt.i_board) AS cmt
+		FROM t_board a
+		WHERE
+		a.i_board_type = #{i_board_type} AND
+		a.i_board = #{i_board};
+	</select>
+
+
+	<!-- detail 페이지 댓글 -->
+	<select id="detailCmtList" resultType="BoardCmtDomain">
+		SELECT *
+		FROM board_cmt
+		WHERE i_board = #{i_board};
+	</select>
+
+
+	<!-- 댓글 창 -->
+	<insert id="insCmtProc">
+		INSERT INTO board_cmt
+		(i_user, i_board, ctnt)
+		VALUES
+		(#{i_user}, #{i_board}, #{ctnt});
+	</insert>
+
+
+	<insert id="insFavorite">
+		INSERT INTO t_favorite
+		(i_user, i_board)
+		VALUES
+		(#{i_user}, #{i_board});
+	</insert>
+
+	<select id="selFavorite" resultType="FavoriteDomain">
+		SELECT i_user, i_board
+		FROM t_favorite
+		WHERE i_user = #{i_user} AND i_board = #{i_board};
+	</select>
+
+</mapper>
+
+
+
+
