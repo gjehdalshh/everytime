@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.flex_div {
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	width: 880px;
+	font-size: 40px;
+	font-weight: bold;
+	padding: 50 50;
+	background-color: white;
+}
+
+.type_title {
+	margin-left: 100px;
+}
+
+.flex {
+	display: flex;
+}
+
+.left img, .search img {
+	width: 60px;
+	height: 60px;
+}
+
+.jum img {
+	width: 50px;
+	height: 50px;
+	margin-left: 50px;
+}
+
+/* --------------- list --------------------- */
+.div1 {
+	padding-top: 150px;
+	margin: 0 50;
+}
+
+.border {
+	border-bottom: 0.1px solid darkgray;
+	margin-top: 10px;
+}
+
+.nm {
+	font-size: 40px;
+	margin-bottom: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ctnt {
+	font-size: 30px;
+	color: #5e5d5d;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 10px;
+}
+
+.between {
+	font-size: 28px;
+	margin: 0 12px;
+	padding-top: 4px;
+}
+
+.flex_between {
+	display: flex;
+	justify-content: space-between;
+	font-size: 35px;
+	color: darkgray;
+	margin-bottom: 10px;
+}
+
+.like_img, .message_img {
+	font-size: 35px;
+	color: gray;
+}
+
+.like_img img, .message_img img {
+	width: 30px;
+	height: 30px;
+	margin: 0 10px;
+}
+
+/* ------------- 글 쓰기 ----------------- */
+
+.flex_fix {
+	display: flex;
+    font-size: 30px;
+    bottom: 5%;
+    position: fixed;
+    left: 40%;
+    border: 2px solid darkgray;
+    padding: 25 40 25 30;
+    border-radius: 40px;
+    align-items: center;
+    font-weight: bold;
+    background-color: white;
+}
+
+.ins_img {
+	width: 60px;
+}
+
+/* --------- 모달창 띄우기 ------------------ */
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+.mw {
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 1;
+}
+
+.mw .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: gray;
+	opacity: .5;
+}
+
+.mw .fg {
+	position: absolute;
+	left: 3%;
+	width: 920px;
+	height: 300px;
+	background-color: #f1f1f1;
+	bottom: 3%;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.modal_title {
+	font-size: 30px;
+	border-bottom: 0.1px solid darkgray;
+	padding: 30 0;
+}
+
+.write {
+	font-size: 40px;
+	border-bottom: 0.1px solid darkgray;
+	padding: 23 0;
+	color: #2a2aff;
+}
+
+.window_close {
+	font-size: 40px;
+	padding: 23;
+	color: #2a2aff;
+}

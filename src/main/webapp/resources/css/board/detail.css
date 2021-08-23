@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* ---------------- 상단 -----------------*/
+.main_div {
+	margin: 0 50px;
+}
+
+.flex_div {
+	display: flex;
+	justify-content: space-between;
+	margin: 30 0 50;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.type_title {
+	font-size: 40px;
+	margin-left: 30px;
+}
+
+.danger_img {
+	width: 100px;
+	height: 100px;
+	padding-top: 15px;
+}
+
+.left_img, .jum_img {
+	width: 60px;
+	height: 60px;
+}
+
+/* ------------------메인 ----------------------- */
+.profile_div img {
+	width: 120px;
+	height: 120px;
+	border-radius: 25px;
+}
+
+.secret, .r_dt {
+	font-size: 38px;
+	margin-left: 20px;
+}
+
+.secret {
+	font-weight: bold;
+}
+
+.r_dt {
+	color: gray;
+}
+
+.favorite, .save {
+	background-color: white;
+	border: 0.1px solid darkgray;
+	width: 130px;
+	height: 80px;
+	font-size: 30px;
+	border-radius: 20px;
+}
+
+.save {
+	margin-left: 15px;
+}
+
+.board_nm {
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	word-break: break-word;
+}
+
+.board_ctnt {
+	font-size: 35px;
+	margin-bottom: 30px;
+	word-break: break-word;
+}
+
+.border_div {
+	border-bottom: 0.1px solid gray;
+	padding-bottom: 50px;
+	margin-bottom: 40px;
+}
+
+.like, .talk, .star {
+	width: 50px;
+	height: 50px;
+	font-size: 20px;
+	margin: 0 15;
+}
+
+.like_div, .talk_div, .star_div {
+	font-size: 40px;
+	display: flex;
+	align-items: center;
+}
+
+.like_div {
+	color: red;
+}
+
+.talk_div {
+	color: blue;
+}
+
+.star_div {
+	color: yellow;
+}
+
+/* ----------------댓글 --------------------- */
+.cmt_flex_div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cmt_profile {
+	width: 100px;
+	height: 100px;
+	border-radius: 25px;
+}
+
+.cmt_title {
+	font-size: 40px;
+	margin-left: 20px;
+	font-weight: bold;
+}
+
+#btn_div {
+	border: 1px solid darkgray;
+	height: 80px;
+	border-radius: 20px;
+	width: 280px;
+}
+
+.cmt_talk, .cmt_like, .cmt_other {
+	width: 40px;
+	height: 50px;
+	padding: 5 27px;
+}
+
+.cmt_talk {
+	border-right: 1px solid gray;
+}
+
+.cmt_like {
+	border-right: 1px solid gray;
+}
+
+.cmt_ctnt {
+	font-size: 32px;
+	word-break: break-all;
+}
+
+.cmt_r_dt {
+	font-size: 30px;
+	color: gray;
+}
+
+/* --------- 모달창 띄우기 ------------------ */
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+.mw {
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.mw .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: gray;
+	opacity: .5;
+}
+
+.mw .fg {
+	position: absolute;
+	left: 3%;
+	width: 920px;
+	height: 400px;
+	background-color: #f1f1f1;
+	bottom: 3%;
+	border-radius: 20px;
+	text-align: center;
+	z-index: 100;
+}
+
+.fg_cmt {
+	position: absolute;
+	left: 3%;
+	width: 920px;
+	height: 400px;
+	background-color: #f1f1f1;
+	bottom: 3%;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.modal_title {
+	font-size: 30px;
+	border-bottom: 0.1px solid darkgray;
+	padding: 30 0;
+}
+
+.change, .remove, .write, .danger, .window_close {
+	font-size: 40px;
+	padding: 23 0;
+	color: #2a2aff;
+	border-bottom: 0.1px solid darkgray;
+}
+
+.window_close {
+	border-bottom: none;
+}
+
+/* --------------- 댓글 작성 ----------------- */
+.cmt_ins_div {
+	position: relative;
+}
+
+.unknown_label {
+	position: absolute;
+	padding: 30;
+	font-size: 30px;
+}
+
+.unknown_label input {
+	zoom: 2;
+}
+
+.cmt_ins {
+	width: 880px;
+	height: 100px;
+	padding: 20 20 15 150;
+	border-radius: 20px;
+	border: none;
+	background-color: #f6f6f6;
+	font-size: 30px;
+	outline: none;
+}
+
+.cmt_ins_imgDiv {
+	position: absolute;
+	right: 0px;
+	padding: 27 40 18;
+}
+
+.cmt_ins_imgDiv img {
+	width: 50px;
+	height: 50px;
+}
