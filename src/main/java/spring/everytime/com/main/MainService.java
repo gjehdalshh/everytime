@@ -70,13 +70,17 @@ public class MainService {
 	List<BoardDomain> boardTypeCmtList(BoardDTO dto) {
 		return mapper.boardTypeCmtList(dto);
 	}
+	
 	List<BoardDomain> selectProc(BoardDTO dto) {
+		
 		return mapper.selectProc(dto);
 	}
 	
 	// 페이징 처리
 	BoardDomain listCount(BoardDTO dto) {
+		
 		return mapper.listCount(dto);
 	}
 
 }
+

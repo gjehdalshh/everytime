@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.idChange {
+	margin: 0 40;
+}
+
+.flex {
+	display: flex;
+	margin: 40 0;
+}
+
+/* --------- 아이디 변경 ------------------ */
+.back img {
+	width: 60px;
+	height: 60px;
+	margin-right: 280px;
+}
+
+.title {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.name, .id, .pw {
+	font-size: 30px;
+	margin: 10 0;
+	font-weight: bold;
+	margin-left: 15px;
+}
+
+.user_nm, .user_id, .user_pw {
+	width: 900px;
+	height: 70px;
+	font-size: 30px;
+	border-radius: 20px;
+	background-color: #f2f2f2;
+	border: none;
+	padding: 20px;
+	margin-bottom: 40px;
+}
+
+.user_chkId {
+	width: 900px;
+	height: 70px;
+	font-size: 30px;
+	border-radius: 20px;
+	background-color: #f2f2f2;
+	border: none;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+.sub_ctnt {
+	margin: 40 0;
+	font-size: 23px;
+}
+
+.idChangeBtn {
+	width: 900px;
+	height: 70px;
+	border-radius: 20px;
+	border: none;
+	background-color: #ea2d2d;
+	font-size: 35px;
+	color: white;
+	font-weight: bold;
+}
+
+/* --------------------- 비밀번호 변경 ---------------------- */
+.new_pw, .new_chkPw {
+	width: 900px;
+	height: 70px;
+	font-size: 30px;
+	border-radius: 20px;
+	background-color: #f2f2f2;
+	border: none;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+.user_changePw {
+	width: 900px;
+	height: 70px;
+	font-size: 30px;
+	border-radius: 20px;
+	background-color: #f2f2f2;
+	border: none;
+	padding: 20px;
+	margin-bottom: 40px;
+}
+
+.pwChangeBtn {
+	width: 900px;
+	height: 70px;
+	border-radius: 20px;
+	border: none;
+	background-color: #ea2d2d;
+	font-size: 35px;
+	color: white;
+	font-weight: bold;
+}
+
+.now_pw {
+	font-size: 30px;
+	margin: 10 0;
+	font-weight: bold;
+	margin-left: 15px;
+}
+
+/* --------------------- 이름 설정 ---------------------- */
+.changeNm {
+	font-size: 30px;
+	margin: 10 0;
+	font-weight: bold;
+	margin-left: 15px;
+}
+.user_changeNm{
+	width: 900px;
+	height: 70px;
+	font-size: 30px;
+	border-radius: 20px;
+	background-color: #f2f2f2;
+	border: none;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+.nmChangeBtn{
+	width: 900px;
+	height: 70px;
+	border-radius: 20px;
+	border: none;
+	background-color: #ea2d2d;
+	font-size: 35px;
+	color: white;
+	font-weight: bold;
+}

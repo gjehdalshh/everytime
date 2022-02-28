@@ -19,7 +19,7 @@
 			<div class="change"
 				onclick="updBoardMove(${detail.i_user}, ${detail.i_board}, ${detail.i_board_type})">글
 				수정</div>
-			<div class="remove" onclick="delBoard(${detail.i_board_type})">글
+			<div class="remove" onclick="delBoard(${detail.i_board_type}, ${param.pageNow})">글
 				삭제</div>
 		</c:if>
 		<c:if test="${loginUser.i_user != detail.i_user}">
@@ -44,7 +44,7 @@
 <div class="main_div">
 	<div class="flex_div">
 		<div class="flex">
-			<div onclick="board(${detail.i_board_type})">
+			<div onclick="board(${detail.i_board_type}, ${param.pageNow}, ${param.pageFirst})">
 				<img class="left_img" alt="" src="/res/img/left.png">
 			</div>
 			<div class="type_title">${detail.type_title}</div>
@@ -146,7 +146,7 @@
 </div>
 
 
-<script defer src="/res/js/board/detail.js?ver=10"></script>
+<script defer src="/res/js/board/detail.js?ver=1"></script>
 
 
 

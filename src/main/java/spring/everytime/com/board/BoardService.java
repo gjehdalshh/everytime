@@ -35,7 +35,7 @@ public class BoardService {
 	}
 
 	public BoardDomain detail(BoardDTO dto) {
-
+		
 		BoardDomain vo = mapper.detail(dto);
 		
 		vo.setR_dt(Utils.timeFormat(vo.getR_dt()));

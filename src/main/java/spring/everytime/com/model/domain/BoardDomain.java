@@ -10,9 +10,99 @@ public class BoardDomain extends BoardEntity {
 	private int cmt;
 	
 	// 페이징
+	private int list;
+	private int pageNow;
+	private int total;
+	private int pageCount;
+	private int rest;
+	private int first;
+	private int last;
+	private int pageFirst;
+	private int pageLast;
+	private int pageSection;
 	
 	
 	
+	public int getPageSection() {
+		return pageSection;
+	}
+
+	public void setPageSection(int pageSection) {
+		this.pageSection = pageSection;
+	}
+
+	public int getPageFirst() {
+		return pageFirst;
+	}
+
+	public void setPageFirst(int pageFirst) {
+		this.pageFirst = pageFirst;
+	}
+
+	public int getPageLast() {
+		return pageLast;
+	}
+
+	public void setPageLast(int pageLast) {
+		this.pageLast = pageLast;
+	}
+
+	public int getList() {
+		return list;
+	}
+
+	public void setList(int list) {
+		this.list = list;
+	}
+
+	public int getPageNow() {
+		return pageNow;
+	}
+
+	public void setPageNow(int pageNow) {
+		this.pageNow = pageNow;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public int getPageCount() {
+		return pageCount;
+	}
+
+	public void setPageCount(int pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	public int getRest() {
+		return rest;
+	}
+
+	public void setRest(int rest) {
+		this.rest = rest;
+	}
+
+	public int getFirst() {
+		return first;
+	}
+
+	public void setFirst(int first) {
+		this.first = first;
+	}
+
+	public int getLast() {
+		return last;
+	}
+
+	public void setLast(int last) {
+		this.last = last;
+	}
+
 	public int getFavorite() {
 		return favorite;
 	}

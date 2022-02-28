@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+}
+
+.main_div {
+	margin: 0 40;
+}
+
+.title {
+	text-align: center;
+	font-size: 40px;
+	margin: 40 0;
+	position: relative;
+}
+
+.title img {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	right: 0;
+}
+
+.sub_title {
+	font-size: 35px;
+	margin-bottom: 40px;
+}
+
+.pw, .pw_chk {
+	margin-left: 10px;
+	font-size: 30px;
+	margin-bottom: 20px;
+	color: gray;
+}
+
+.user_pw, .clkPw {
+	width: 880px;
+	height: 85px;
+	font-size: 40px;
+	padding-left: 30px;
+	background-color: #f6f6f6;
+	border-radius: 20px;
+	border: none;
+	font-weight: 100;
+	margin-bottom: 50px;
+}
+
+.btn{
+	border-radius: 40px;
+    background-color: #ea2d2d;
+    border: none;
+    width: 880px;
+    height: 75px;
+    padding-left: 20px;
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: bold;
+}

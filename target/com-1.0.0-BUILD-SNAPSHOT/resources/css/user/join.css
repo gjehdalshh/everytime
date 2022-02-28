@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+input, textarea, button{
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+a{
+	text-decoration: none;
+}
+
+select{
+	 -webkit-appearance:none;
+   -moz-appearance:none;
+   appearance:none;
+   outline: none;
+}
+
+.div1{
+	margin: 0 40;
+}
+
+.join{
+	text-align: center;
+	font-size: 40px;
+	margin: 50 0 50;
+}
+.join img{
+	width: 60px;
+    float: right;
+}
+
+.school_sel{
+	font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.entrance, .school, .nm, .id, .pw, .pw_chk, .user_ph, .user_gender, .user_mail{
+	margin-left: 10px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: gray;
+}
+
+.select, .university, .user_nm, .user_id, .user_pw, .clkPw, .ph, .gender, .mail{
+	width: 880px;
+    height: 85px;
+    font-size: 40px;
+    padding-left: 30px;
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    border: none;
+    font-weight: 100;
+    margin-bottom: 50px;
+}
+
+#btn_join{
+	border-radius: 40px; 
+    background-color: #ea2d2d;
+    border: none;
+    width: 880px;
+    height: 75px;
+    padding-left: 20px;
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+

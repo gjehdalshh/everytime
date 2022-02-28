@@ -28,7 +28,7 @@
 	<div class="div1">
 		<c:forEach var="list" items="${board_type}" begin="0" end="7">
 			<div class="div_1">
-				<a href="/main/board?i_board_type=${list.i_board_type}"><img
+				<a href="/main/board?i_board_type=${list.i_board_type}&pageNow=1&pageFirst=1"><img
 					alt="" src="/res/img/type/sharp.png">${list.type_title}</a>
 			</div>
 		</c:forEach>

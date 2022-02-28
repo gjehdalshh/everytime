@@ -12,7 +12,7 @@
 		t_board_type.i_board_type, type_title, t_board_type.board_hit,
 		i_board,
 		i_user,
-		board_nm, board_ctnt, board_favorite, secret, r_dt
+		board_nm, board_ctnt,  secret, r_dt
 		FROM
 		t_board_type
 		LEFT JOIN t_board
@@ -26,7 +26,7 @@
 	<!-- main/home에 뿌림 hot 게시판 -->
 	<select id="hotList" resultType="BoardDomain">
 		SELECT a.i_board, a.i_user,
-		a.board_nm, a.board_ctnt, a.board_favorite, a.secret, a.r_dt,
+		a.board_nm, a.board_ctnt,  a.secret, a.r_dt,
 		a.board_hit, b.i_board_type, b.type_title,
 		(SELECT everyuser.user_nm
 		FROM everyuser WHERE everyuser.i_user = a.i_user) AS user_nm,
@@ -45,7 +45,7 @@
 	<!-- main/board에 뿌림 type, board, user 정보 -->
 	<select id="boardList" resultType="BoardDomain">
 		SELECT a.i_board,
-		a.i_board_type, a.i_user, a.board_nm, a.board_ctnt, a.board_favorite,
+		a.i_board_type, a.i_user, a.board_nm, a.board_ctnt,
 		a.secret, a.board_hit, TIMESTAMPDIFF(SECOND, a.r_dt, NOW()) AS r_dt,
 		(SELECT everyuser.user_nm FROM everyuser WHERE everyuser.i_user =
 		a.i_user) AS user_nm,
@@ -58,7 +58,7 @@
 		WHERE
 		i_board_type =
 		#{i_board_type}
-		ORDER BY i_board DESC LIMIT 3,5;
+		ORDER BY i_board DESC LIMIT #{first},#{last};
 	</select>
 
 	<!-- boardType게시판에 뿌릴 type -->
@@ -97,7 +97,7 @@
 	<select id="boardSubList" resultType="BoardDomain">
 		<if test="i_board_type == 1">
 			SELECT a.i_board, a.i_board_type, a.board_nm,
-			a.board_ctnt, a.board_favorite, a.board_hit, a.secret, a.r_dt,
+			a.board_ctnt,  a.board_hit, a.secret, a.r_dt,
 			b.i_user, b.user_nm,
 			(SELECT t_board_type.type_title FROM t_board_type
 			WHERE t_board_type.i_board_type = a.i_board_type) AS type_title,
@@ -116,7 +116,7 @@
 		<if test="i_board_type == 2">
 			SELECT a.i_cmt, a.i_board, a.i_user, b.i_board,
 			b.i_board_type, b.board_nm, b.board_ctnt,
-			b.board_favorite, b.secret,
+			 b.secret,
 			b.r_dt, b.board_hit,
 			(SELECT t_board_type.type_title FROM t_board_type
 			WHERE t_board_type.i_board_type = b.i_board_type) AS type_title,
@@ -137,7 +137,7 @@
 		</if>
 		<if test="i_board_type == 4">
 			SELECT i_board, i_board_type, i_user, board_nm,
-			board_ctnt, board_favorite, secret, r_dt, board_hit,
+			board_ctnt,  secret, r_dt, board_hit,
 			(SELECT
 			everyuser.user_nm FROM everyuser WHERE everyuser.i_user =
 			t_board.i_user) AS user_nm,
@@ -155,7 +155,7 @@
 		</if>
 		<if test="i_board_type == 5">
 			SELECT i_board, i_board_type, i_user, board_nm,
-			board_ctnt, board_favorite,
+			board_ctnt, 
 			secret, r_dt, board_hit,
 			(SELECT
 			everyuser.user_nm FROM everyuser WHERE
@@ -183,7 +183,7 @@
 	<!-- 보드 검색 -->
 	<select id="selectProc" resultType="BoardDomain">
 		SELECT a.i_board,
-		a.i_board_type, a.i_user, a.board_nm, a.board_ctnt, a.board_favorite,
+		a.i_board_type, a.i_user, a.board_nm, a.board_ctnt,
 		a.secret, a.board_hit, TIMESTAMPDIFF(SECOND, a.r_dt, NOW()) AS r_dt,
 		(SELECT everyuser.user_nm FROM everyuser WHERE everyuser.i_user =
 		a.i_user) AS user_nm,

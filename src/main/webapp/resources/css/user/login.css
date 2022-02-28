@@ -61,9 +61,19 @@ a {
 	height: 85px;
 	padding-left: 20px;
 	font-size: 35px;
-	margin-bottom: 50px;
 	color: white;
 	font-weight: bold;
+}
+
+#naver_id_login {
+	text-align: center;
+}
+
+#naver_id_login img {
+	width: 700px;
+	border-radius: 40px;
+	height: 85px;
+	margin-bottom: 50px;
 }
 
 .find {

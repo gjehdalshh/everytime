@@ -11,8 +11,14 @@ public class UserEntity {
 	private String r_dt;
 	private String entrance;
 	private String m_dt;
+	private String mail;
 	
-	
+	public String getMail() {
+		return mail;
+	}
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
 	public String getM_dt() {
 		return m_dt;
 	}

@@ -2,16 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.everytime.com.user.UserMapper">
 
+	<!-- 유저 회원가입 -->
 	<insert id="insUser">
 		INSERT INTO everyuser
 		(user_id, user_nm, user_pw, ph,
-		gender, university, entrance)
+		gender, university, entrance, mail)
 		VALUES
 		(#{user_id}, #{user_nm},
-		#{user_pw}, #{ph}, #{gender}, #{university}, #{entrance})
+		#{user_pw}, #{ph}, #{gender}, #{university}, #{entrance}, #{mail})
 	</insert>
 
+	<!-- 유저 데이터 값 확인 -->
 	<select id="selUser" resultType="UserDomain">
+		select *
+		from everyuser
+		where
+		user_id = #{user_id} or
+		user_nm = #{user_nm} or
+		ph = #{ph} or
+		mail =
+		#{mail}
+	</select>
+
+	<!-- naver 로그인 시 아이디가 존재 하는 지 확인 -->
+	<select id="naverUserLogin" resultType="UserDomain">
+		SELECT *
+		FROM everyuser
+		WHERE mail = #{mail}
+		AND user_nm = #{user_nm} AND ph = #{ph};
+	</select>
+
+	<!-- naver 로그인 시 아이디가 없다면 생성 -->
+	<insert id="naverUserInsert">
+		INSERT INTO everyuser
+		(user_id, user_nm, user_pw, ph, gender, university, entrance, mail)
+		VALUES
+		(#{user_id}, #{user_nm}, #{user_pw}, #{ph}, #{gender}, '계명대학교', #{entrance}, #{mail});
+	</insert>
+
+	<select id="findUser" resultType="UserDomain">
 		select *
 		from everyuser
 		where
@@ -22,9 +51,10 @@
 	<update id="idChange">
 		UPDATE everyuser SET
 		user_id = #{user_id}
-		WHERE i_user = #{i_user};
+		WHERE i_user
+		= #{i_user};
 	</update>
-	
+
 	<!-- 아이디,비밀번호 변경 시 확인할 id값 -->
 	<select id="selUserId" resultType="UserDomain">
 		select *
@@ -32,21 +62,24 @@
 		where
 		i_user = #{i_user}
 	</select>
-	
+
 	<!-- 유저 비밀번호 변경 -->
 	<update id="pwChange">
 		UPDATE everyuser SET
 		user_pw = #{new_pw}
-		WHERE i_user = #{i_user}
+		WHERE i_user =
+		#{i_user}
 	</update>
-	
+
 	<!-- 유저 아이디 검색 -->
 	<select id="selUserNm" resultType="UserDomain">
-		SELECT user_nm, TIMESTAMPDIFF(SECOND, m_dt, NOW()) AS m_dt
+		SELECT user_nm,
+		TIMESTAMPDIFF(SECOND, m_dt, NOW()) AS m_dt
 		FROM everyuser
-		WHERE i_user = #{i_user};
+		WHERE i_user =
+		#{i_user};
 	</select>
-	
+
 	<!-- 유저 이름 설정 -->
 	<update id="nmChange">
 		UPDATE everyuser SET
@@ -54,5 +87,12 @@
 		m_dt = NOW()
 		WHERE i_user = #{i_user};
 	</update>
+
+	<!-- 아이디 / 비밀번호 찾기 -->
+	<select id="userInfoProc" resultType="UserDomain">
+		SELECT *
+		FROM everyuser
+		WHERE mail = #{mail};
+	</select>
 </mapper>
 

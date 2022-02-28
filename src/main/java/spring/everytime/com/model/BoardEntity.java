@@ -10,6 +10,15 @@ public class BoardEntity {
 	private int secret;
 	private String r_dt;
 	private int board_hit;
+	private int listCount;
+
+	public int getListCount() {
+		return listCount;
+	}
+
+	public void setListCount(int listCount) {
+		this.listCount = listCount;
+	}
 	
 	public int getBoard_hit() {
 		return board_hit;

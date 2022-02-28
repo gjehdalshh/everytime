@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+}
+
+a{
+	text-decoration: none;
+}
+.school{
+	color: black;
+}
+
+.flex_div {
+	display: flex;
+	align-items: baseline;
+	margin: 20px;
+}
+
+.flex {
+	display: flex;
+	margin: 20px;
+	border-bottom: 1px solid;
+}
+
+.everytime {
+	color: #f63030;
+	font-size: 30px;
+}
+
+.school {
+	font-size: 56px;
+	font-weight: bold;
+}
+
+.find_color {
+	font-size: 30px;
+	margin-right: 20px;
+	background-color: #ffc107;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.find_normal {
+	font-size: 30px;
+	padding: 10px;
+}
+
+.title_id {
+	font-size: 50px;
+	margin: 20 auto;
+	width: 268px;
+}
+
+.title_pw {
+	font-size: 50px;
+	margin: 20 auto;
+	width: 318px;
+}
+
+.title_info {
+	font-size: 25px;
+	margin: auto;
+	width: 676px;
+}
+
+.title_info2{
+	font-size: 25px;
+	margin: auto;
+	width: 791px;
+}
+
+.mail_div {
+	text-align: center;
+}
+
+.btn_div {
+	text-align: center;
+}
+
+.mail {
+	border-radius: 10px;
+	border: 1px solid;
+	width: 700px;
+	height: 75px;
+	padding-left: 30px;
+	font-size: 35px;
+	margin: 30 0;
+}
+
+.user_id {
+	border-radius: 10px;
+	border: 1px solid;
+	width: 700px;
+	height: 75px;
+	padding-left: 30px;
+	font-size: 35px;
+	margin: 30 0 0;
+}
+
+.btn_find {
+	border-radius: 10px;
+	border: 1px solid;
+	width: 700px;
+	height: 75px;
+	padding-left: 30px;
+	font-size: 35px;
+	background-color: white;
+}

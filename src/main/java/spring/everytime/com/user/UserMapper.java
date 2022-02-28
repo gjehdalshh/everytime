@@ -14,4 +14,8 @@ public interface UserMapper {
 	int pwChange(UserDTO dto);
 	UserDomain selUserNm(UserDTO dto);
 	int nmChange(UserDTO dto);
+	UserDomain userInfoProc(UserDTO dto);
+	UserDomain findUser(UserDTO dto);
+	UserDomain naverUserLogin(UserDTO dto);
+	int naverUserInsert(UserDTO dto);
 }

@@ -2,12 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="/res/css/board/insBoard.css?ver=4">
-
+<input class="pageNow" type="hidden" value=${param.pageNow }>
+<input class="pageFirst" type="hidden" value=${param.pageFirst }>
 <div class="div1">
 	<input id="i_user" type="hidden" value="${loginUser.i_user}" /> <input
 		id="i_board_type" type="hidden" value="${selType.i_board_type}" />
 	<div class="flex">
-		<div class="back" onclick="board(${selType.i_board_type})">
+		<div class="back" onclick="board(${selType.i_board_type}, ${param.pageNow}, ${param.pageFirst})">
 			<img alt="" src="/res/img/left.png">
 		</div>
 		<div class="main_title">글 쓰기</div>
@@ -41,4 +42,4 @@
 
 
 
-<script defer src="/res/js/board/insBoard.js?ver=11"></script>
+<script defer src="/res/js/board/insBoard.js?ver=6"></script>

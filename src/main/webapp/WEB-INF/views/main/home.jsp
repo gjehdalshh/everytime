@@ -59,7 +59,7 @@
 	</div>
 	<div>
 		<c:forEach var="type_list" items="${type_list}" begin="0" end="9">
-			<div onclick="board(${type_list.i_board_type})" class="type_flex">
+			<div onclick="board(${type_list.i_board_type}, 1 , 1)" class="type_flex">
 				<div class="type_board">${type_list.type_title}</div>
 				<div class="board_title">${type_list.board_nm}</div>
 			</div>
@@ -71,7 +71,7 @@
 	<div class="hot_board_div">실시간 인기 글</div>
 	<c:forEach var="hotList" items="${hotList}" end="2">
 		<div
-			onclick="hotBoardMove(${hotList.i_board}, ${hotList.i_user}, ${hotList.i_board_type})"
+			onclick="hotBoardMove(${hotList.i_board}, ${hotList.i_user}, ${hotList.i_board_type}, 1, 1)"
 			class="div_1">
 			<div class="flex_div">
 				<div class="flex">
@@ -100,4 +100,4 @@
 	</c:forEach>
 </div>
 
-<script defer src="/res/js/main/home.js?ver=10"></script>
+<script defer src="/res/js/main/home.js?ver=4"></script>

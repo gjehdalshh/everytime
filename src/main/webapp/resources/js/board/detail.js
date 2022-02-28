@@ -6,8 +6,9 @@ var i_user = document.querySelector('.i_user')
 var cmtIuser = document.querySelector('.cmtIuser')
 var cmt_ins_div = document.querySelector('.cmt_ins_div')
 
-function board(i_board_type) {
-	location.href = `/main/board?i_board_type=` + i_board_type
+function board(i_board_type, pageNow, pageFirst) {
+	location.href =`/main/board?i_board_type=`+i_board_type + '&pageNow=' + pageNow
+	+ `&pageFirst=`+pageFirst
 }
 
 // 모달창 띄우기 디테일페이지
@@ -105,10 +106,10 @@ function delCmtBoard(i_cmt) {
 
 
 // 글 삭제 ajax
-function delBoard(i_board_type) {
+function delBoard(i_board_type, pageNow) {
 
 	var param = {
-		i_board: i_board.value,
+		i_board: i_board.value
 	}
 
 	fetch(`/board/delBoard`, {
@@ -126,6 +127,7 @@ function delBoard(i_board_type) {
 				// 삭제 성공
 				alert('게시글을 삭제하였습니다')
 				location.href = `/main/board?i_board_type=` + i_board_type
+				+'&pageNow='+pageNow
 				break;
 			case 2:
 				// 삭제 실패

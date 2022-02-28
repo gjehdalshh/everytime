@@ -39,14 +39,14 @@ select{
     margin-bottom: 50px;
 }
 
-.entrance, .school, .id, .pw, .pw_chk, .user_ph, .user_gender{
+.entrance, .school, .nm, .id, .pw, .pw_chk, .user_ph, .user_gender, .user_mail{
 	margin-left: 10px;
     font-size: 30px;
     margin-bottom: 20px;
     color: gray;
 }
 
-.select, .university, .user_nm, .user_pw, .user_pw_chk, .ph, .gender{
+.select, .university, .user_nm, .user_id, .user_pw, .clkPw, .ph, .gender, .mail{
 	width: 880px;
     height: 85px;
     font-size: 40px;

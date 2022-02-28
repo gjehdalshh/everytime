@@ -30,7 +30,7 @@
 	<select id="updBoardSel" resultType="BoardDomain">
 		SELECT i_board,
 		t_board.i_board_type AS i_board_type, i_user, board_nm, board_ctnt,
-		board_favorite, secret, TIMESTAMPDIFF(SECOND, r_dt, NOW()) AS r_dt,
+		 secret, TIMESTAMPDIFF(SECOND, r_dt, NOW()) AS r_dt,
 		type_title, t_board_type.board_hit
 		FROM t_board
 		LEFT JOIN t_board_type
@@ -51,7 +51,7 @@
 	<!-- detail페이지 -->
 	<select id="detail" resultType="BoardDomain">
 		SELECT a.i_board, a.i_board_type,
-		a.i_user, a.board_nm, a.board_ctnt, a.board_favorite, a.secret,
+		a.i_user, a.board_nm, a.board_ctnt, a.secret,
 		(SELECT count(t_favorite.i_user) FROM t_favorite WHERE
 		t_favorite.i_board = a.i_board) AS favorite,
 		TIMESTAMPDIFF(SECOND,

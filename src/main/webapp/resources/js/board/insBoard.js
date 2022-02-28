@@ -4,9 +4,12 @@ var title = document.querySelector('.title')
 var ctnt = document.querySelector('.ctnt')
 var secret = document.querySelector('.secret')
 var submit = document.querySelector('#submit')
+var pageNow = document.querySelector('.pageNow')
+var pageFirst = document.querySelector('.pageFirst')
 
-function board(i_board_type) {
+function board(i_board_type, pageNow, pageFirst) {
 	location.href =`/main/board?i_board_type=`+i_board_type
+	+ '&pageNow='+pageNow + '&pageFirst='+pageFirst
 }
 
 submit.onclick = function() {
@@ -20,7 +23,9 @@ function insBoard() {
 		i_board_type: i_board_type.value,
 		board_nm: title.value,
 		board_ctnt: ctnt.value,
-		secret: secret.value
+		secret: secret.value,
+		pageNow: pageNow.value,
+		pageFirst: pageFirst.value
 	}
 	console.log(param)
 	
@@ -38,6 +43,8 @@ function insBoard() {
 				case 1:
 					alert('게시글이 작성되었습니다')
 					location.href = `/main/board?i_board_type=` + i_board_type.value
+					+ `&pageNow=` + pageNow.value + `&pageFirst=`+ pageFirst.value
+					
 					break;
 			}
 		})

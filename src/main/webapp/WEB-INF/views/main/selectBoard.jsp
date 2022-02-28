@@ -4,8 +4,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="/res/css/main/selectBoard.css?ver=5">
 <div class="div1">
+	<input class="pageNow" type="hidden" value="${param.pageNow}">
+	<input class="pageFirst" type="hidden" value="${param.pageFirst}">
 	<div class="flex_div">
-		<form action="/main/selectBoard?i_board_type=${param.i_board_type}" method="Post">
+		<c:if test="${param.i_board_type == null}">
+			<form action="/main/selectBoard" method="Post">
+		</c:if>
+		<c:if test="${param.i_board_type != null}">
+			<form action="/main/selectBoard?i_board_type=${param.i_board_type}&pageNow=${param.pageNow}&pageFirst=${param.pageFirst}" method="Post">
+		</c:if>
 			<div class="relative">
 				<img class="search_img" alt="" src="/res/img/search.svg"> <input
 					class="search" type="text" placeholder="글 제목, 내용, 해시태그"
@@ -18,8 +25,12 @@
 
 	<div class="div2">
 		<c:forEach var="list" items="${selectList}">
-			<div class="border"
-				onclick="detail(${param.i_board_type},${list.i_board},${list.i_user})">
+			<c:if test="${param.pageNow == null}">
+				<div class="border" onclick="detail(${list.i_board_type},${list.i_board},${list.i_user}, 1, 1)">
+			</c:if>
+			<c:if test="${param.pageNow != null}">
+				<div class="border" onclick="detail(${list.i_board_type},${list.i_board},${list.i_user}, ${param.pageNow}, ${param.pageFirst})">
+			</c:if>
 				<div class="nm">${list.board_nm}</div>
 				<div class="ctnt">${list.board_ctnt}</div>
 				<div class="flex_between">
@@ -47,9 +58,6 @@
 			</div>
 		</c:forEach>
 	</div>
-
 </div>
 
-
-
-<script defer src="/res/js/main/selectBoard.js?ver=4"></script>
+<script defer src="/res/js/main/selectBoard.js?ver=2"></script>
