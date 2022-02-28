@@ -8,7 +8,7 @@
 	<div class="school_sel">학교 선택</div>
 	<div class="entrance">입학년도</div>
 	
-	
+	test
 		<div>
 			<select class="select" name="entrance">
 				<option class="" value="선택안함">연도 선택 (학번)</option>
